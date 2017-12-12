@@ -6,11 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd client && webpack -w" 
+    "build": "cd client && webpack -w"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^1.12.5",
     "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.0-rc0"
   }
 }
