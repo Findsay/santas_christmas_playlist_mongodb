@@ -22,3 +22,12 @@ MongoClient.connect("mongodb://localhost:27017/christmas_songs", function(err, d
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/client/build/index.html');
 });
+
+app.get("/songs", function(req, res){
+  db.collection("songs").find().toArray(function(err, results){
+    if(err){
+      console.log(err);
+    }
+    res.json(results);
+  })
+});
