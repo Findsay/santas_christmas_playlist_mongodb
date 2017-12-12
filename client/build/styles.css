@@ -1,6 +1,6 @@
 *{
   font-family: 'Calligraffitti', cursive;
-  
+
 }
 
 body{
@@ -42,6 +42,12 @@ button {
   background-color: red !important;
 }
 
+.banner {
+  background-image: url("http://www.designbolts.com/wp-content/uploads/2014/11/Christmas-Snow-Flakes-twitter-header-banner.png");
+  width: 2000px;
+  height: 70px;
+}
+
 .title-container {
   background-color: darkred;
 }
@@ -63,35 +69,29 @@ li {
   ;
 }
 
-.list-container {
-  width: 50%;
-  height:433px;
-  background-color: black;
-  margin-left: 5px;
-}
-
 .submit-form {
   margin-left: 5px;
 
 }
 
 table {
-  margin-left: 5px;
 
+  margin-left: 5px;
+  margin-right: 5px;
   border-collapse: collapse;
-  font-family: "Arial Rounded MT Bold";
-  color: #176087;
-  width: 70%;
+
+  color: darkred;
+  width: 99.25%;
 }
 
 th {
   height: 25px;
-  background-color: #0A2239;
+  background-color: darkred;
   color: white;
 }
 
 th, td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid darkred;
   text-align: center;
   padding: 15px;
 }
@@ -101,3 +101,5 @@ td {
   height: 20px;
   vertical-align: center;
 }
+
+tr:nth-child(odd) {background-color: #ffe5e5}

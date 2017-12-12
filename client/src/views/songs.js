@@ -22,7 +22,13 @@ SongView.prototype = {
       row.appendChild(cell2);
 
       var cell3 = document.createElement('td');
-      cell3.innerText = song.Rating;
+
+      for( i = 0; i < song.Rating; i++ ){
+        var image = document.createElement('img');
+        image.src = "/images/santa-icon.png"
+        image.width = 25;
+        cell3.appendChild(image);
+      }
       row.appendChild(cell3);
 
       table.appendChild(row);
