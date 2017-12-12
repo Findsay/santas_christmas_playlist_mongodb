@@ -6,20 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Christmas Songs</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+
   <script src="bundle.js"></script>
 </head>
 <body>
-  <h2>The Best Christmas Songs....EVER!</h1>
-
-    <form method="POST" action="/songs">
-      <input type="text" placeholder="Artist" name="Artist">
-      <input type="text" placeholder="Song" name="Song">
-      <input type="text" placeholder="Santa's Rating" name="Santa's Rating">
-      <button type="submit">Submit</button>
-    </form>
-    <form action="/delete" method="POST">
-      <button id="deleteButton" type="submit">Delete All</button>
-    </form>
-
-  </body>
-  </html>
+  <div class="title-container">
+    <h2>The Best Christmas Songs....EVER!</h1>
+    </div>
+    <div class="container">
+      <form class= "submit-form" method="POST" action="/songs">
+        <input type="text" placeholder="Artist" name="Artist">
+        <input type="text" placeholder="Song" name="Song">
+        <input type="text" placeholder="Santa's Rating" name="Rating">
+        <button type="submit">Submit</button>
+      </form>
+      <form action="/delete" method="POST">
+        <button id="deleteButton" type="submit">Delete All</button>
+      </form>
+    </div>
+    <div class="table-container">
+      <table id="song-table">
+        <tr>
+          <th>Song  </th>
+          <th>Artist </th>
+          <th>Santa Rating</th>
+        </tr>
+      </div>
+    </body>
+    </html>
