@@ -18,3 +18,7 @@ MongoClient.connect("mongodb://localhost:27017/christmas_songs", function(err, d
     console.log('App running on port '+this.address().port);
   });
 });
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/client/build/index.html');
+});
