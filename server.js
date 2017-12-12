@@ -6,16 +6,21 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('client/build'));
 
-var MongoClient = require("mongodb").MongoClient;
-MongoClient.connect("mongodb://localhost:27017/christmas_songs", function(err, database){
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect(
+  // Works like mong in that if it doesnt exist it will create it.
+  "mongodb://localhost:27017/christmas_songs",
+  function(err, client){
   if(err){
     return console.log(err);
   }
-  db = database;
-  console.log("Connected to DB");
-
-  app.listen(3000, function () {
-    console.log('App running on port '+this.address().port);
+  // Make db global so the entire application can access db.
+  db = client.db("christmas_songs");
+  console.log('Connected to DB');
+  // Don't fire up the server until connected to the DB.
+  app.listen(3000, function(){
+    console.log("Listening on port 3000");
   });
 });
 
@@ -31,3 +36,17 @@ app.get("/songs", function(req, res){
     res.json(results);
   })
 });
+
+app.post("/songs", function(req, res){
+  db.collection("songs").save(req.body, function(err, result){
+    if(err){
+      console.log(err);
+    }
+    res.redirect("/");
+  })
+});
+
+app.post("/delete", function(req, res){
+  db.collection("songs").remove();
+  res.redirect("/");
+})
